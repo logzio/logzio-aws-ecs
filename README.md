@@ -1,4 +1,4 @@
-# logzio-docker-ecs
+# Logz.io Docker ECS Collector
 
 logzio-docker-ecs collects logs from Amazon Elastic Container Service (ECS) and forwards them to Logz.io.
 The container uses Fluentd to collect logs and fluent-plugin-detect-exceptions to collect stack traces.
