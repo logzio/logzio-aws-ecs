@@ -35,7 +35,7 @@ docker run logzio/logzio-docker-ecs \
 
 | Paramater | Details |
 |---|---|
-| **LOGZIO_URL_1** | **Required**. Your Logz.io listener URL and account token. To ship to different accounts, increment the number (e.g., `LOGZIO_URL_2`, `LOGZIO_URL_3`). <br /> Replace `<ACCOUNT-TOKEN>` with the [token](https://app.logz.io/#/dashboard/settings/general) of the account you want to ship to. <br /> Replace `<LISTENER-URL>` with your region's listener URL. For more information on finding your account's region, see [Account region](https://docs.logz.io/user-guide/accounts/account-region.html) in the Logz.io Docs. |
+| **LOGZIO_URL_1** | **Required**. Your Logz.io listener URL and account token. To ship to different accounts, increment the number (e.g., `LOGZIO_URL_2`, `LOGZIO_URL_3`). <br /> Replace `<LISTENER-URL>` with your region's listener URL. For more information on finding your account's region, see [Account region](https://docs.logz.io/user-guide/accounts/account-region.html) in the Logz.io Docs. <br /> Replace `<ACCOUNT-TOKEN>` with the [token](https://app.logz.io/#/dashboard/settings/general) of the account you want to ship to. |
 
 ### 3. Check Logz.io for your logs
 
