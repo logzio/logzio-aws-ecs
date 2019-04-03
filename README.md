@@ -20,14 +20,13 @@ docker pull logzio/logzio-aws-ecs
 For a complete list of options, see the parameters below the code block.👇
 
 ```shell
-docker run -d logzio/logzio-aws-ecs \
---name=logzio-aws-ecs \
---env LOGZIO_URL="https://<LISTENER-URL>:8071" \
---env LOGZIO_TOKEN="<ACCOUNT-TOKEN>" \
+docker run --name=logzio-aws-ecs \
+-e "LOGZIO_URL_1=https://<LISTENER-URL>:8071?token=<ACCOUNT-TOKEN>" \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v /var/lib/docker/containers:/var/lib/docker/containers \
 -v /tmp:/tmp \
---net="host"
+-d --net="host" \
+logzio/logzio-aws-ecs
 ```
 
 #### Parameters
