@@ -2,7 +2,7 @@
 
 This integration uses Fluentd in a Docker container to forward logs from your Amazon Elastic Container Service (ECS) cluster to Logz.io.
 
-**Note** that this repo refers to an EC2 based cluster. For Fargate based cluster see [this](https://docs.logz.io/shipping/log-sources/fargate.html).
+**Note** that this repo refers to an EC2-based cluster. For Fargate-based cluster see [this](https://docs.logz.io/shipping/log-sources/fargate.html).
 
 You can deploy this integration in two ways:
 * [Manual deployment (Classic Console)](https://github.com/logzio/logzio-aws-ecs/tree/refactoring#manual-deployment).
@@ -30,7 +30,7 @@ In your prefered text editor, open the JSON you downloaded in the previous step 
 
 ### 3. Advanced settings (optional)
 
-Since the docker image is based on Logz.io's [fluentd-docker-logs](https://github.com/logzio/fluentd-docker-logs) image, any of the environment variable mentioned [here](https://github.com/logzio/fluentd-docker-logs#parameters) can be added to the task definition JSON.
+Since the Docker image is based on Logz.io's [fluentd-docker-logs](https://github.com/logzio/fluentd-docker-logs) image, any of the environment variables mentioned [here](https://github.com/logzio/fluentd-docker-logs#parameters) can be added to the task definition JSON.
 
 
 ### 4. Add your task definition
@@ -41,7 +41,7 @@ Since the docker image is based on Logz.io's [fluentd-docker-logs](https://githu
 
 3. In the **Step 2: Configure task and container definitions** screen, scroll down and click on the **Configure via JSON** button.
 
-4. In the test-box that opened, delete the existing text, and paste your configured task definition JSON. Press **Save**, then press **Create**.
+4. In the text-box, delete the existing text and paste your configured task definition JSON. Press **Save**, then press **Create**.
 
 ### 5. Run the task
 
@@ -51,7 +51,7 @@ Since the docker image is based on Logz.io's [fluentd-docker-logs](https://githu
 
 3. Choose the cluster you want to ship logs from.
 
-4. For **Placement Templates** choose **One Task Per Host**.
+4. For **Placement Templates**, choose **One Task Per Host**.
 
 5. Click on **Run Task**.
 
@@ -102,17 +102,17 @@ Scroll down and click on **Create stack**.
 
 ### 3. Run the task
 
-1. Go to your AWS ECS page, and on the left menu click on **Task Definitions**, then choose the task you just created.
+1. Go to your AWS ECS page, and on the left menu, click on **Task Definitions**, then choose the task you just created.
 
-1. Click on the **Actions** button, then choose **Run Task**.
+2. Click on the **Actions** button, then choose **Run Task**.
 
-2. In the **Run Task** screen, choose **EC2** as your **Launch type**.
+3. In the **Run Task** screen, choose **EC2** as your **Launch type**.
 
-3. Choose the cluster you want to ship logs from.
+4. Choose the cluster you want to ship logs from.
 
-4. For **Placement Templates** choose **One Task Per Host**.
+5. For **Placement Templates** choose **One Task Per Host**.
 
-5. Click on **Run Task**.
+6. Click on **Run Task**.
 
 ### 6. Check Logz.io for your logs
 
