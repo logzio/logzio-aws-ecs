@@ -17,7 +17,7 @@ docker pull logzio/logzio-aws-ecs
 
 ### 2. Run the Docker image
 
-For a complete list of options, see the parameters below the code block.👇
+For a complete list of options, see the parameters list under the code block.👇
 
 ```shell
 docker run --name=logzio-aws-ecs \
