@@ -1,0 +1,94 @@
+{
+   "AWSTemplateFormatVersion":"2010-09-09",
+   "Description": "Auto deployment for shipping ECS logs to Logz.io.",
+   "Parameters": {
+    "LogzioListener": {
+      "Type": "String",
+      "Description": "The Logz.io listener URL fot your region. (For more details, see the regions page: https://docs.logz.io/user-guide/accounts/account-region.html)",
+      "Default": "https://listener.logz.io:8071",
+      "AllowedValues" :[
+        "https://listener.logz.io:8071",
+        "https://listener-au.logz.io:8071",
+        "https://listener-ca.logz.io:8071",
+        "https://listener-eu.logz.io:8071",
+        "https://listener-nl.logz.io:8071",
+        "https://listener-uk.logz.io:8071",
+        "https://listener-wa.logz.io:8071"
+      ]
+    },
+    "LogzioToken": {
+      "Type": "String",
+      "Description": "Your Logz.io logs token. (Can be retrieved from the Manage Token page.)",
+      "MinLength": 1
+    }
+   },
+   "Resources":{
+      "LogzioTaskDefinition":{
+         "Type":"AWS::ECS::TaskDefinition",
+         "Properties":{
+            "ContainerDefinitions":[
+               {
+                  "Environment":[
+                     {
+                        "Name":"LOGZIO_LOG_SHIPPING_TOKEN",
+                        "Value": !Ref LogzioToken
+                     },
+                     {
+                        "Name":"LOGZIO_LOG_LISTENER",
+                        "Value": !Ref LogzioListener
+                     },
+                     {
+                        "Name":"LOGZIO_TYPE",
+                        "Value":"ecs"
+                     }
+                  ],
+                  "PortMappings":[
+                     {
+                        "ContainerPort":"5001",
+                        "Protocol":"tcp"
+                     },
+                     {
+                        "ContainerPort":"8071",
+                        "Protocol":"tcp"
+                     }
+                  ],
+                  "MountPoints":[
+                     {
+                        "ContainerPath":"/var/lib/docker",
+                        "SourceVolume":"varlibdocker"
+                     },
+                     {
+                        "ReadOnly":true,
+                        "ContainerPath":"/var/run/docker.sock",
+                        "SourceVolume":"varrundocker"
+                     }
+                  ],
+                  "MemoryReservation":512,
+                  "Image":"docker.io/logzio/fluentd-docker-logs:1.0.0",
+                  "Essential":true,
+                  "ReadonlyRootFilesystem":false,
+                  "Name":"logzio-fluentd-ecs"
+               }
+            ],
+            "Family":"logzio-fluentd-ecs",
+            "RequiresCompatibilities":[
+               "EC2"
+            ],
+            "Volumes":[
+               {
+                  "Name":"varlibdocker",
+                  "Host":{
+                     "SourcePath":"/var/lib/docker"
+                  }
+               },
+               {
+                  "Name":"varrundocker",
+                  "Host":{
+                     "SourcePath":"/var/run/docker.sock"
+                  }
+               }
+            ]
+         }
+      }
+   }
+}

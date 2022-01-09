@@ -73,12 +73,12 @@
             "dockerLabels": null,
             "systemControls": null,
             "privileged": null,
-            "name": "fluentd-logzio"
+            "name": "logzio-fluentd-ecs"
         }
     ],
     "memory": null,
     "taskRoleArn": null,
-    "family": "fluentd-logzio",
+    "family": "logzio-fluentd-ecs",
     "pidMode": null,
     "requiresCompatibilities": [
         "EC2"
