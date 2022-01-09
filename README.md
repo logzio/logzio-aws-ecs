@@ -24,8 +24,8 @@ In your prefered text editor, open the JSON you downloaded in the previous step 
 
 | Paramater | Details |
 |---|---|
-| **<<LOG-SHIPPING-TOKEN>>** | **Required**. Your Logz.io account token. Replace with the [token](https://app.logz.io/#/dashboard/settings/general) of the account you want to ship to. |
-| **<<LISTENER-HOST>>** | **Required**. Your Logz.io listener URL. Replace with your region's listener URL.|
+| `<<LOG-SHIPPING-TOKEN>>` | **Required**. Your Logz.io account token. Replace with the [token](https://app.logz.io/#/dashboard/settings/general) of the account you want to ship to. |
+| `<<LISTENER-HOST>>` | **Required**. Your Logz.io listener URL. Replace with your region's listener URL.|
 
 
 ### 3. Advanced settings (optional)
