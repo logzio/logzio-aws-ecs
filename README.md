@@ -5,8 +5,8 @@ This integration uses Fluentd in a Docker container to forward logs from your Am
 **Note** that this repo refers to an EC2 based cluster. For Fargate based cluster see [this](https://docs.logz.io/shipping/log-sources/fargate.html).
 
 You can deploy this integration in two ways:
-* Manual deployment (Classic Console).
-* Cloudformation deployment.
+* [Manual deployment (Classic Console)](https://github.com/logzio/logzio-aws-ecs/tree/refactoring#manual-deployment).
+* [Cloudformation deployment](https://github.com/logzio/logzio-aws-ecs/tree/refactoring#cloudformation-deployment).
 
 ## Manual deployment
 
