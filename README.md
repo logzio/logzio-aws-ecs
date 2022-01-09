@@ -62,6 +62,8 @@ Give your logs some time to get from your system to ours, and then open [Kibana]
 
 ## Cloudformation deployment
 
+### 1. Configure and create your stack
+
 Click the button that matches your AWS region, then follow the instructions below:
 
 | AWS Region | Launch button |
@@ -70,6 +72,51 @@ Click the button that matches your AWS region, then follow the instructions belo
 
 **Note:** if your region is not in the list, let us know in the [repo's issues](https://github.com/logzio/logzio-aws-ecs/issues), or reach out to Logz.io's support team!
 
+#### In screen **Step 1 Specify template**:
+
+Keep the defaults and click **Next**.
+
+![Screen_1](img/screen_01.png)
+
+#### In screen **Step 2 Specify stack details**:
+
+1. For **Stack name** you can keep the default, or change the stack name.
+
+2. For **LogzioListener** - choose your Logz.io listener from the list.
+
+3. For **LogzioToken** - insert your Logz.io logs shipping token.
+
+4. Click **Next**.
+
+![Screen_1](img/screen_02.png)
+
+#### In screen **Step 3 Configure stack options** (Optional):
+
+If you want to, you can add your custom tags, or not. Click on **Next**.
+
+#### In screen **Step 4 Review**:
+
+Scroll down and click on **Create stack**.
+
+### 2. Give your stack a few moments to launch.
+
+### 3. Run the task
+
+1. Go to your AWS ECS page, and on the left menu click on **Task Definitions**, then choose the task you just created.
+
+1. Click on the **Actions** button, then choose **Run Task**.
+
+2. In the **Run Task** screen, choose **EC2** as your **Launch type**.
+
+3. Choose the cluster you want to ship logs from.
+
+4. For **Placement Templates** choose **One Task Per Host**.
+
+5. Click on **Run Task**.
+
+### 6. Check Logz.io for your logs
+
+Give your logs some time to get from your system to ours, and then open [Kibana](https://app.logz.io/#/dashboard/kibana).
 
 ## Changelog
 
