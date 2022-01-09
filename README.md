@@ -49,10 +49,28 @@ Since the docker image is based on Logz.io's [fluentd-docker-logs](https://githu
 
 2. In the **Run Task** screen, choose **EC2** as your **Launch type**.
 
-3. In the **Run Task** screen, choose the cluster you want to ship logs from.
+3. Choose the cluster you want to ship logs from.
 
-4. Click on **Run Task**.
+4. For **Placement Templates** choose **One Task Per Host**.
+
+5. Click on **Run Task**.
 
 ### 6. Check Logz.io for your logs
 
 Give your logs some time to get from your system to ours, and then open [Kibana](https://app.logz.io/#/dashboard/kibana).
+
+
+## Cloudformation deployment
+
+Click the button that matches your AWS region, then follow the instructions below:
+
+| AWS Region | Launch button |
+| --- | --- |
+| `us-east-1` | [![Deploy to AWS](https://dytvr9ot2sszz.cloudfront.net/logz-docs/lights/LightS-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/template?templateURL=https://logzio-aws-integrations-us-east-1.s3.amazonaws.com/logzio-aws-ecs/1.0.0/auto-deployment.json&stackName=logzio-aws-ecs-auto-deployment) |
+
+**Note:** if your region is not in the list, let us know in the [repo's issues](https://github.com/logzio/logzio-aws-ecs/issues), or reach out to Logz.io's support team!
+
+
+## Changelog
+
+See this project's [changelog](https://github.com/logzio/logzio-aws-ecs/blob/master/CHANGELOG.md).
