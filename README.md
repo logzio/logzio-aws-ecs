@@ -35,9 +35,9 @@ Since the Docker image is based on Logz.io's [fluentd-docker-logs](https://githu
 
 ### 4. Add your task definition
 
-1. In your [Amazon ECS Classic Console](https://console.aws.amazon.com/ecs/) menu go to **Task Definitions** and click on **Create new Task Definition**.
+1. In your [Amazon ECS Classic Console](https://console.aws.amazon.com/ecs/) menu, go to **Task Definitions** and click on **Create new Task Definition**.
 
-2. In the **Step 1: Select launch type compatibility** screen choose **EC2** and click **Next step**.
+2. In the **Step 1: Select launch type compatibility** screen, choose **EC2** and click **Next step**.
 
 3. In the **Step 2: Configure task and container definitions** screen, scroll down and click on the **Configure via JSON** button.
 
@@ -80,7 +80,7 @@ Keep the defaults and click **Next**.
 
 #### In screen **Step 2 Specify stack details**:
 
-1. For **Stack name** you can keep the default, or change the stack name.
+1. For **Stack name** you can either keep the default, or change the stack name.
 
 2. For **LogzioListener** - choose your Logz.io listener from the list.
 
@@ -88,7 +88,7 @@ Keep the defaults and click **Next**.
 
 4. Click **Next**.
 
-![Screen_1](img/screen_02.png)
+![Screen_2](img/screen_02.png)
 
 #### In screen **Step 3 Configure stack options** (Optional):
 
